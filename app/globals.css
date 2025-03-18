@@ -8,8 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-redhat);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +19,24 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* background: var(--background); */
+  /* color: var(--foreground); */
+  color: #004d6d;
+  font-family: var(--font-redhat);
+}
+
+.clip-path-header {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+}
+
+.clip-path-mision {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
+}
+
+.clip-path-features {
+  clip-path: polygon(0 0, 100% 0%, 90% 100%, 0 100%);
+}
+
+html {
+  scroll-behavior: smooth;
 }
