@@ -60,9 +60,9 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-3xl mx-auto space-y-4 pt-20 pb-4 px-24 bg-[#19566D] text-white border-b-[32px] rounded-tl-[24px] border-[#0B2B3E]"
+      className="max-w-3xl mx-auto space-y-4 pt-12 pb-4 px-20 bg-[#19566D] text-white border-b-[32px] rounded-tl-[24px] border-[#0B2B3E]"
     >
-      <h2 className="text-white font-bold text-5xl">
+      <h2 className="text-white font-bold text-4xl 2xl:text-5xl">
         Hablemos sobre el futuro de tu negocio.
       </h2>
       <p>
@@ -134,7 +134,7 @@ export default function Form() {
         <textarea
           {...register("mensaje", { required: "Este campo es requerido" })}
           id="mensaje"
-          rows={4}
+          rows={3}
           className="w-full p-4 rounded-md bg-[#0B2B3E] placeholder:text-white"
           placeholder="Escribe aquí"
         />

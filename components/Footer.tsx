@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#014D6C] p-4">
-      <nav className="max-w-7xl mx-auto flex justify-between items-center text-lg">
+      <nav className="max-w-7xl px-8 mx-auto flex justify-between items-center text-lg">
         <div className="flex flex-col gap-4">
           <ul className="flex gap-16 text-white">
             <li>

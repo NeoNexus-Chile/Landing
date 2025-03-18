@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`flex gap-16 items-center fixed z-30 transition-all duration-300 rounded-lg
+      className={`flex gap-4 font-medium 2xl:gap-16 items-center fixed z-30 transition-all duration-300 rounded-lg
       ${
         scrolled
           ? "bg-white/70 backdrop-blur-md top-0 shadow-lg right-0 w-screen px-4 py-2 justify-center"

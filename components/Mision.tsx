@@ -11,7 +11,7 @@ export default function Mision() {
         <img
           src="/assets/hands.webp"
           alt="Imagen de mano humana y robot"
-          className="object-contain relative -right-24 pointer-events-none"
+          className="object-contain relative mt-8 -right-14 2xl:-right-24 pointer-events-none"
         />
 
         <article className="bg-[#1C5870] h-fit text-white text-xl text-right flex flex-col items-end gap-16 clip-path-mision pl-32 py-16 pr-28 mt-20">
