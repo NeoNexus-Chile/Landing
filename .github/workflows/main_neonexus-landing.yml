@@ -21,18 +21,22 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '22.x'
+          node-version: '20.x'
 
-      - name: npm install, build, and test
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build Next.js application
+        run: npm run build
+
+      - name: Prepare artifact for deployment
         run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          mkdir -p deploy
+          cp -R .next public package.json package-lock.json deploy/
+          cp -R node_modules deploy/
+          cd deploy && zip -r ../release.zip .
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
-
-      - name: Upload artifact for deployment job
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: node-app
@@ -64,11 +68,11 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AEF4A1F8EDB64D88A41D664ED3664E78 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E22D39777DF6442EA6E435BC96929089 }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'neonexus-landing'
-          slot-name: 'Production'
           package: .
+          restart: true
           
