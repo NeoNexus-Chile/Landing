@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import { toast } from "react-toastify";
 // Definimos el schema de validación
 const formSchema = z.object({
   nombre: z
@@ -78,14 +78,21 @@ export default function Form() {
       });
 
       if (response.ok) {
-        setSubmitStatus("success");
+        // setSubmitStatus("success");
+        toast.success("Mensaje enviado con éxito");
         reset();
         setCaptchaToken(null);
       } else {
-        setSubmitStatus("error");
+        // setSubmitStatus("error");
+        toast.error(
+          "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente."
+        );
       }
     } catch (error) {
-      setSubmitStatus("error");
+      // setSubmitStatus("error");
+      toast.error(
+        "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente."
+      );
     }
     setIsSubmitting(false);
   };
