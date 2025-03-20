@@ -3,6 +3,7 @@ import { Red_Hat_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ToastContainer } from "react-toastify";
+import Analytics from "@/components/Analytics";
 
 const redHatDisplay = Red_Hat_Display({
   variable: "--font-redhat",
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <ToastContainer position="bottom-right" />
+        <Analytics />
       </body>
     </html>
   );

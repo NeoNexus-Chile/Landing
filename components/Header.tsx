@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header
       id="home"
-      className="grid grid-cols-[2fr_3fr] min-h-screen isolate relative"
+      className="grid grid-cols-[3fr_4fr] min-h-screen isolate relative"
     >
       <div className="bg-neutral-950 clip-path-header relative flex flex-col justify-center items-center text-white gap-12 overflow-hidden group">
         <img
