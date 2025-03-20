@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header
       id="home"
-      className="grid grid-cols-[2fr_3fr] min-h-svh isolate relative"
+      className="grid grid-cols-[2fr_3fr] min-h-screen isolate relative"
     >
       <div className="bg-neutral-950 clip-path-header relative flex flex-col justify-center items-center text-white gap-12 overflow-hidden group">
         <img
@@ -23,7 +23,7 @@ export default function Header() {
         </div>
         <ServicesButton />
         <img
-          className="absolute inset-0 h-full w-full opacity-50 object-cover pointer-events-none transition-all duration-300 group-hover:scale-[2]"
+          className="absolute inset-0 h-full w-full opacity-60 object-cover pointer-events-none transition-all duration-300 group-hover:scale-[2]"
           src="/assets/header-bg.webp"
           alt="Fondo de colores"
         />

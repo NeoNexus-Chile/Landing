@@ -6,6 +6,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Inicializamos el estado con la posición actual del scroll
+    setScrolled(window.scrollY > SCROLL_OFFSET);
+
     const handleScroll = () => {
       const isScrolled = window.scrollY > SCROLL_OFFSET;
       setScrolled(isScrolled);
@@ -13,7 +16,6 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Limpieza del event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

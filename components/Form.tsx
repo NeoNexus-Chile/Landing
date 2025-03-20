@@ -2,14 +2,37 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import ReCAPTCHA from "react-google-recaptcha";
 
-interface FormData {
-  nombre: string;
-  mailOrigen: string;
-  telefono: string;
-  mensaje: string;
-}
+// Definimos el schema de validación
+const formSchema = z.object({
+  nombre: z
+    .string()
+    .min(2, "El nombre debe tener al menos 2 caracteres")
+    .max(50, "El nombre no puede exceder los 50 caracteres")
+    .regex(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/, "El nombre solo puede contener letras"),
+
+  mailOrigen: z
+    .string()
+    .email("Correo electrónico inválido")
+    .max(100, "El correo no puede exceder los 100 caracteres"),
+
+  telefono: z
+    .string()
+    .max(20, "El teléfono no puede exceder los 20 caracteres")
+    .optional()
+    .or(z.literal("")), // Permite string vacío
+
+  mensaje: z
+    .string()
+    .min(10, "El mensaje debe tener al menos 10 caracteres")
+    .max(500, "El mensaje no puede exceder los 500 caracteres"),
+});
+
+// Tipo inferido del schema
+type FormData = z.infer<typeof formSchema>;
 
 export default function Form() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,31 +40,41 @@ export default function Form() {
     null
   );
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaError, setCaptchaError] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormData>();
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
 
   const onSubmit = async (data: FormData) => {
     if (!captchaToken) {
-      alert("Por favor, completa el captcha");
+      setCaptchaError(true);
       return;
     }
-
+    setCaptchaError(false);
     setIsSubmitting(true);
+
+    const requestBody = {
+      name: data.nombre,
+      mail: data.mailOrigen,
+      phone: data.telefono,
+      message: data.mensaje,
+    };
+
+    console.log("Request body:", requestBody);
+
     try {
       const response = await fetch("https://mail-sender.neonexus.cl/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...data,
-          asunto: "Necesito una app",
-        }),
+        body: JSON.stringify(requestBody),
       });
 
       if (response.ok) {
@@ -60,7 +93,7 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-3xl mx-auto space-y-4 pt-12 pb-4 px-20 bg-[#19566D] text-white border-b-[32px] rounded-tl-[24px] border-[#0B2B3E]"
+      className="max-w-3xl mx-auto space-y-4 pt-12 pb-4 px-20 bg-[#19566D] text-white border-b-[32px] rounded-tl-[24px] border-[#0B2B3E] isolate relative"
     >
       <h2 className="text-white font-bold text-4xl 2xl:text-5xl">
         Hablemos sobre el futuro de tu negocio.
@@ -74,7 +107,7 @@ export default function Form() {
           Nombre y Apellido
         </label>
         <input
-          {...register("nombre", { required: "Este campo es requerido" })}
+          {...register("nombre")}
           type="text"
           id="nombre"
           className="w-full p-3 rounded-md bg-[#0B2B3E] placeholder:text-white"
@@ -90,13 +123,7 @@ export default function Form() {
           Correo Electrónico
         </label>
         <input
-          {...register("mailOrigen", {
-            required: "Este campo es requerido",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Correo electrónico inválido",
-            },
-          })}
+          {...register("mailOrigen")}
           type="email"
           id="mailOrigen"
           placeholder="Agrega tu email"
@@ -114,7 +141,7 @@ export default function Form() {
           Teléfono
         </label>
         <input
-          {...register("telefono", { required: "Este campo es requerido" })}
+          {...register("telefono")}
           type="tel"
           id="telefono"
           placeholder="Agrega tu teléfono"
@@ -132,7 +159,7 @@ export default function Form() {
           Mensaje
         </label>
         <textarea
-          {...register("mensaje", { required: "Este campo es requerido" })}
+          {...register("mensaje")}
           id="mensaje"
           rows={3}
           className="w-full p-4 rounded-md bg-[#0B2B3E] placeholder:text-white"
@@ -143,11 +170,19 @@ export default function Form() {
         )}
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex flex-col items-end gap-2">
         <ReCAPTCHA
-          sitekey="TU_CLAVE_PUBLICA_DE_RECAPTCHA"
-          onChange={(token) => setCaptchaToken(token)}
+          sitekey="6LeUvPkqAAAAAEKF-flQWZndE_7fy4NsY64UqIeK"
+          onChange={(token) => {
+            setCaptchaToken(token);
+            setCaptchaError(false);
+          }}
         />
+        {captchaError && (
+          <span className="text-red-500 text-sm">
+            Por favor, completa el captcha
+          </span>
+        )}
       </div>
 
       <button
@@ -169,6 +204,12 @@ export default function Form() {
           Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
         </div>
       )}
+
+      <img
+        src="/assets/waves.webp"
+        alt="Imagen de olas digitales"
+        className="absolute top-0 left-0 w-full h-full object-cover object-top opacity-[0.1] -z-10"
+      />
     </form>
   );
 }
