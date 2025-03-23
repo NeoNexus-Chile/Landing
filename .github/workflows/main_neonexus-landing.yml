@@ -31,9 +31,11 @@ jobs:
 
       - name: Prepare artifact for deployment
         run: |
-          mkdir -p deploy
-          cp -R .next public package.json package-lock.json deploy/
-          cp -R node_modules deploy/
+          mkdir deploy
+          cp -r .next/standalone/* deploy/
+          cp -r .next/static deploy/.next/static
+          cp -r public deploy/public
+          cp package.json package-lock.json deploy/
           cd deploy && zip -r ../release.zip .
 
       - name: Upload artifact
