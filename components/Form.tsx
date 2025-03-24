@@ -100,7 +100,7 @@ export default function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-3xl mx-auto space-y-4 pt-12 pb-4 px-20 bg-[#19566D] text-white border-b-[32px] rounded-tl-[24px] border-[#0B2B3E] isolate relative"
+      className="max-w-3xl mx-auto space-y-4 pt-12 pb-4 px-8 lg:px-20 bg-[#19566D] text-white border-b-[32px] lg:rounded-tl-[24px] border-[#0B2B3E] isolate relative"
     >
       <h2 className="text-white font-bold text-4xl 2xl:text-5xl">
         Hablemos sobre el futuro de tu negocio.
@@ -179,7 +179,8 @@ export default function Form() {
 
       <div className="flex flex-col items-end gap-2">
         <ReCAPTCHA
-          sitekey="6LeUvPkqAAAAAEKF-flQWZndE_7fy4NsY64UqIeK"
+          // sitekey="6LeUvPkqAAAAAEKF-flQWZndE_7fy4NsY64UqIeK"
+          sitekey="6Ldnu_kqAAAAAKyQC_7787OWnd4mX_-2z-7_v1PS"
           onChange={(token) => {
             setCaptchaToken(token);
             setCaptchaError(false);

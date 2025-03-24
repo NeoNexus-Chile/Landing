@@ -14,7 +14,7 @@ export default function Carousel() {
   const swiperRef = useRef<SwiperType | undefined>(undefined);
 
   return (
-    <div className="px-16 relative group">
+    <div className="px-2 lg:px-16 relative group">
       <button
         onClick={() => swiperRef.current?.slidePrev()}
         className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full text-white transition-all cursor-pointer hover:scale-105 duration-300 active:scale-90"
@@ -46,7 +46,7 @@ export default function Carousel() {
           { src: "/assets/laravel.svg", alt: "Laravel logo" },
           { src: "/assets/tailwind.svg", alt: "Tailwind logo" },
         ].map((image, index) => (
-          <SwiperSlide key={index} className="!w-64">
+          <SwiperSlide key={index}>
             <div className="bg-[#004C6C] w-64 h-32 flex justify-center items-center p-8 transition-all duration-300 hover:backdrop-blur-xs hover:bg-neutral-50/10">
               <img className="object-contain" src={image.src} alt={image.alt} />
             </div>

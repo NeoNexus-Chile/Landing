@@ -15,8 +15,10 @@ export default function Header() {
           alt="Logo de NeoNexus"
           className="z-10 -ml-[10%] transition-all duration-300 group-hover:scale-[2] group-hover:translate-y-[50%] hidden lg:block"
         />
-        <div className="bg-neutral-950/75 z-10 py-12 px-8 w-full clip-path-mision pl-16 lg:pl-20 2xl:pl-32 lg:-mr-[20%] transition-all duration-300 group-hover:translate-x-full">
-          <p className="text-3xl font-bold">El nexo entre ideas</p>
+        <div className="bg-neutral-950/75 text-center lg:text-left z-10 py-12 px-8 w-full clip-path-mision pl-16 lg:pl-20 2xl:pl-32 lg:-mr-[20%] transition-all duration-300 group-hover:translate-x-full">
+          <p className="text-3xl font-bold -ml-4 lg:ml-0">
+            El nexo entre ideas
+          </p>
           <p className="text-3xl font-thin opacity-75">
             Y realidades digitales.
           </p>

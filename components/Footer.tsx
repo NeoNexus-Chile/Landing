@@ -17,9 +17,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#014D6C] p-4">
-      <nav className="max-w-7xl px-8 mx-auto flex justify-between items-center text-lg">
+      <nav className="max-w-7xl px-2 lg:px-8 mx-auto flex justify-between items-center text-sm lg:text-lg">
         <div className="flex flex-col gap-4">
-          <ul className="flex gap-16 text-white">
+          <ul className="flex gap-8 lg:gap-16 text-white justify-between lg:justify-start">
             <li>
               <a
                 href="#home"
@@ -58,12 +58,16 @@ export default function Footer() {
             </li>
           </ul>
           <div className="flex gap-4 text-white text-sm">
-            <p>@2023 Zerra. All rights reserved</p>
+            <p>@2025 NeoNexus. All rights reserved</p>
             <a href="/">Terminos y condiciones</a>
             <a href="/">Política de privacidad</a>
           </div>
         </div>
-        <a href="#home" onClick={(e) => handleScroll(e, "#home")}>
+        <a
+          className="hidden lg:block"
+          href="#home"
+          onClick={(e) => handleScroll(e, "#home")}
+        >
           <img
             className="transition-all duration-300 hover:opacity-90 hover:scale-90"
             src="/assets/logo-white.svg"
