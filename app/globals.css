@@ -27,14 +27,23 @@ body {
 
 .clip-path-header {
   clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+  @media (max-width: 1024px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 .clip-path-mision {
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
+  @media (max-width: 1024px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 .clip-path-features {
   clip-path: polygon(0 0, 100% 0%, 90% 100%, 0 100%);
+  @media (max-width: 1024px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 html {

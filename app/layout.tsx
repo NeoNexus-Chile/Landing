@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ToastContainer } from "react-toastify";
 import Analytics from "@/components/Analytics";
+import "swiper/css";
 
 const redHatDisplay = Red_Hat_Display({
   variable: "--font-redhat",

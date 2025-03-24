@@ -1,6 +1,6 @@
 export default function Features() {
   return (
-    <section id="servicios" className="grid grid-cols-2 gap-16 h-[400px]">
+    <section id="servicios" className="grid grid-cols-2 gap-16 h-[400px] mt-28">
       <div className="relative flex justify-center items-center overflow-hidden bg-neutral-950 clip-path-features">
         <h2 className="z-10 text-6xl font-bold text-white">
           Nos <br /> <span className="font-normal">especializamos en:</span>

@@ -21,7 +21,7 @@ export default function ChevScroll() {
       className="inline-block mx-auto mt-8"
       onClick={(e) => handleScroll(e, "#mision")}
     >
-      <IoChevronDown className="text-8xl transition-all duration-300 hover:text-[#D25B2F] cursor-pointer text-[#DBE3F6]" />
+      <IoChevronDown className="text-9xl lg:text-8xl transition-all duration-300 hover:text-[#D25B2F] cursor-pointer text-[#DBE3F6]" />
     </a>
   );
 }
