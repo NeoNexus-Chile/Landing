@@ -46,7 +46,7 @@ export default function Technologies() {
             <div className="relative flex justify-center items-center p-12 bg-white h-[180px] transition-all duration-300 before:w-full before:h-full before:bg-[#0A2C3E] before:-z-20 before:transition-all before:duration-300 before:absolute before:top-6 before:-left-3">
               <img
                 className="object-contain w-full h-full"
-                src="/assets/riohurtado.png"
+                src="/assets/municipalidad-riohurtado.png"
                 alt="Logo Riohurtado"
               />
             </div>
@@ -84,7 +84,7 @@ export default function Technologies() {
           <div className="relative flex justify-center items-center py-4 px-8 bg-white transition-all duration-300 border border-[#0b2b3f]">
             <img
               className="object-contain aspect-video"
-              src="/assets/riohurtado.png"
+              src="/assets/municipalidad-riohurtado.png"
               alt="Logo Riohurtado"
             />
           </div>
