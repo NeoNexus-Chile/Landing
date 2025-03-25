@@ -179,8 +179,7 @@ export default function Form() {
 
       <div className="flex flex-col items-end gap-2">
         <ReCAPTCHA
-          // sitekey="6LeUvPkqAAAAAEKF-flQWZndE_7fy4NsY64UqIeK"
-          sitekey="6Ldnu_kqAAAAAKyQC_7787OWnd4mX_-2z-7_v1PS"
+          sitekey="6LdTCgArAAAAAPfttCYG5nwncHqPPHTZkeJ88Cr6"
           onChange={(token) => {
             setCaptchaToken(token);
             setCaptchaError(false);

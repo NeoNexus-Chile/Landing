@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Header from "@/components/Header";
 import Mision from "@/components/Mision";
 import Features from "@/components/Features";
