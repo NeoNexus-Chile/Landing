@@ -69,13 +69,16 @@ export default function Form() {
     console.log("Request body:", requestBody);
 
     try {
-      const response = await fetch("https://mail-sender.neonexus.cl/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      });
+      const response = await fetch(
+        "mail-sender-interno-ehh9cbe2f5d3akfd.eastus-01.azurewebsites.net/api/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
 
       if (response.ok) {
         // setSubmitStatus("success");

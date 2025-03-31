@@ -4,9 +4,9 @@ import TechMarquee from "./TechMarquee";
 export default function Technologies() {
   return (
     <>
-      <section className="relative text-white pb-12 lg:pb-0 px-4 pt-16 lg:pt-36 mt-16 lg:mt-0">
+      <section className="relative text-white pb-12 lg:pb-20 px-4 pt-16 lg:pt-36 mt-16 lg:mt-0">
         <h2 className="text-lg lg:text-3xl lg:text-center mb-8">
-          Nuestro compromiso es contigo:
+          Nuestro compromiso es contigo:{" "}
           <span className="font-bold">
             innovación, eficiencia y resultados medibles.
           </span>
@@ -24,7 +24,7 @@ export default function Technologies() {
             className="absolute inset-0 h-full w-full -z-10"
           />
         </picture>
-        <div className="hidden lg:block translate-y-[33%]">
+        {/* <div className="hidden lg:block translate-y-[33%]">
           <h3 className="text-3xl text-center mb-8">
             Confiaron en <span className="font-bold">nosotros</span>
           </h3>
@@ -58,10 +58,10 @@ export default function Technologies() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
-      <section className="lg:hidden px-4 relative pb-6">
+      {/* <section className="lg:hidden px-4 relative pb-6">
         <div className="absolute lg:hidden w-full bg-white -bottom-8 z-20 left-0 h-8 rounded-b-[100%]"></div>
         <h3 className="text-xl lg:text-3xl text-center mb-4">
           Confiaron en <span className="font-bold">nosotros</span>
@@ -96,7 +96,7 @@ export default function Technologies() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

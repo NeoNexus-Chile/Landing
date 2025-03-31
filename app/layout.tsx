@@ -50,6 +50,10 @@ export const metadata: Metadata = {
       "En NeoNexus creamos soluciones de software innovadoras y personalizadas para potenciar tu negocio.",
     images: ["/assets/og-image.jpg"],
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
