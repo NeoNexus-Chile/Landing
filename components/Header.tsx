@@ -15,7 +15,7 @@ export default function Header() {
           alt="Logo de NeoNexus"
           className="z-10 -ml-[10%] transition-all duration-300 group-hover:scale-[2] group-hover:translate-y-[50%] hidden lg:block"
         />
-        <div className="bg-neutral-950/75 text-center lg:text-left z-10 py-12 px-8 w-full clip-path-mision pl-16 lg:pl-20 2xl:pl-32 lg:-mr-[20%] transition-all duration-300 group-hover:translate-x-full">
+        <div className="bg-neutral-950/75 text-center lg:text-left z-10 py-12 px-2 w-full clip-path-mision lg:pl-16 lg:pl-20 2xl:pl-32 lg:-mr-[20%] transition-all duration-300 group-hover:translate-x-full">
           <p className="text-3xl font-bold -ml-4 lg:ml-0">
             El nexo entre ideas
           </p>
@@ -31,10 +31,10 @@ export default function Header() {
         />
       </div>
       <article className="p-6 lg:p-16 text-center flex flex-col justify-center mt-12 lg:mt-20">
-        <h1 className="text-4xl lg:text-6xl mb-8 leading-6 lg:leading-10 font-regular">
+        <h1 className="text-4xl lg:text-6xl mb-8 leading-8 lg:leading-10 font-regular">
           Transformamos ideas
           <br />
-          <span className="font-extrabold text-xl">
+          <span className="font-extrabold text-xl leading-2 lg:leading-10">
             a soluciones digitales innovadoras.
           </span>
         </h1>

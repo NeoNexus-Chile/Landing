@@ -23,7 +23,7 @@ export default function Mision() {
           estrategia digital trabaja para crear soluciones que optimicen
           procesos, potencien negocios y generen impacto
           <button
-            className={`bg-[#CF5F36] invisible lg:block hover:bg-gradient-to-r hover:from-[#8AB8E1] hover:to-[#CF5F36] text-white py-2 px-12 rounded-md w-fit cursor-pointer`}
+            className={`bg-[#CF5F36] hidden invisible lg:block hover:bg-gradient-to-r hover:from-[#8AB8E1] hover:to-[#CF5F36] text-white py-2 px-12 rounded-md w-fit cursor-pointer`}
           >
             Más
           </button>

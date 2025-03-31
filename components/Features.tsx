@@ -2,9 +2,9 @@ export default function Features() {
   return (
     <section
       id="servicios"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-[400px] mb-36 lg:mb-0"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:h-[400px] mb-16"
     >
-      <div className="relative py-20 lg:py-0 flex justify-center items-center overflow-hidden bg-neutral-950 clip-path-features">
+      <div className="relative py-20 lg:py-0 flex justify-center items-center overflow-hidden mt-16 lg:mt-0 bg-neutral-950 clip-path-features">
         <h2 className="z-10 text-3xl lg:text-6xl font-bold text-white">
           Nos <br /> <span className="font-normal">especializamos en:</span>
         </h2>
