@@ -13,8 +13,8 @@ export default function Home() {
       <Header />
       <Mision />
       <Technologies />
-      <Team />
-      <Companies />
+      {/* <Team /> */}
+      {/* <Companies /> */}
       <Features />
       <Contact />
       <FooterLogoMobile />
