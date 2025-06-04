@@ -44,7 +44,10 @@ export default function Carousel() {
           { src: "/assets/netcore.svg", alt: "NetCore logo" },
           { src: "/assets/next.svg", alt: "Next logo" },
           { src: "/assets/laravel.svg", alt: "Laravel logo" },
-          { src: "/assets/tailwind.svg", alt: "Tailwind logo" },
+          { src: "/assets/azure.svg", alt: "Azure logo" },
+          { src: "/assets/docker.svg", alt: "Docker logo" },
+          { src: "/assets/dotnet.svg", alt: "Dotnet logo" },
+          { src: "/assets/gcp.svg", alt: "GCP logo" },
         ].map((image, index) => (
           <SwiperSlide key={index}>
             <div className="bg-[#004C6C] w-64 h-32 flex justify-center items-center p-8 transition-all duration-300 hover:backdrop-blur-xs hover:bg-neutral-50/10">
